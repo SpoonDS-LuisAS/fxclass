@@ -6,8 +6,8 @@ import java.util.TimerTask;
 
 public class TimerJob extends TimerTask {
     public void run(){
-        LocalDateTime locaTime = LocalDateTime.now();
-        System.out.println("Run TimerJob at " + locaTime.toString());
+        LocalDateTime localTime = LocalDateTime.now();
+        System.out.println(localTime.toString());
 
         MyTask task = new MyTask();
         try {

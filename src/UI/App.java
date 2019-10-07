@@ -9,6 +9,7 @@ import Domain.output.exchange.data.CurrencyExchangeData;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.time.LocalDateTime;
 
 
 public class App {
@@ -26,13 +27,14 @@ public class App {
         CurrencyExchangeData currencyExchangeData = currencyExchange.getData();
 
             String result =
-                    "from currency code: " + currencyExchangeData.getFromCurrencyCode() +
-                            "\n" + "from currency name: " + currencyExchangeData.getFromCurrencyName() +
-                            "\n" + "to currency code:   " + currencyExchangeData.getToCurrencyCode() +
-                            "\n" + "to currency name:   " + currencyExchangeData.getToCurrencyName() +
-                            "\n" + "exchange rate:      " + currencyExchangeData.getExchangeRate() +
-                            "\n" + "last refresh:       " + currencyExchangeData.getTime() +
-                            "\n" + "-------------------------------------------------------";
+                    LocalDateTime.now() +
+                            " | from currency code: " + currencyExchangeData.getFromCurrencyCode() +
+                            " | from currency name: " + currencyExchangeData.getFromCurrencyName() +
+                            " | to currency code:   " + currencyExchangeData.getToCurrencyCode() +
+                            " | to currency name:   " + currencyExchangeData.getToCurrencyName() +
+                            " | exchange rate:      " + currencyExchangeData.getExchangeRate() +
+                            " | last refresh:       " + currencyExchangeData.getTime() +
+                            "\n";
 
             System.out.println(result);
         } catch (AlphaVantageException e) {

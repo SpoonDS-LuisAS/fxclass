@@ -12,7 +12,7 @@ public class TimerApp {
     private static final int periodMs = 172800;
 
     public static void main(String[] args) {
-        System.out.println("TimerApp main thread " + Thread.currentThread().getName());
+        System.out.println(Thread.currentThread().getName());
         TimerTask task = new TimerJob();
 
         Timer timer = new Timer();
