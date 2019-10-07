@@ -37,6 +37,9 @@ public class App {
             System.out.println(result);
         } catch (AlphaVantageException e) {
             System.out.println("The maximum amount of Server polling has been achieved (5/minute or 500/day)");
+
+
+            //Test for Git Commit
         }
     }
 }
