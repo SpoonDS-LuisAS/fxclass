@@ -4,8 +4,12 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class TimerApp {
-    private static final int periodMs = 2000;
+
+    //delayMS is the wait time between launching the timer and the start of the program.
+    //periodMS is the wait between between the running of each instance.
+
     private static final int delayMs = 1000;
+    private static final int periodMs = 172800;
 
     public static void main(String[] args) {
         System.out.println("TimerApp main thread " + Thread.currentThread().getName());

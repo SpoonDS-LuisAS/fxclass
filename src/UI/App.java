@@ -2,6 +2,7 @@ package UI;
 
 import Domain.AlphaVantageConnector;
 import Domain.ForeignExchange;
+import Domain.output.AlphaVantageException;
 import Domain.output.exchange.CurrencyExchange;
 import Domain.output.exchange.data.CurrencyExchangeData;
 
@@ -12,15 +13,15 @@ import java.io.PrintStream;
 
 public class App {
     public static void createLogFile() throws FileNotFoundException {
-        PrintStream o = new PrintStream(new FileOutputStream("/Users/luisarendsanchez/Desktop/Spoon DS/logTest/a.txt", true));
-        System.setOut(o);
+       PrintStream o = new PrintStream(new FileOutputStream("/Users/luisarendsanchez/Desktop/Spoon DS/logTest/a.txt", true));
+       System.setOut(o);
 
         String apiKey = "89HPIWEIMKSVS0TW";
         int timeout = 3000;
         AlphaVantageConnector apiConnector = new AlphaVantageConnector(apiKey, timeout);
         ForeignExchange foreignExchange = new ForeignExchange(apiConnector);
 
-
+        try {
         CurrencyExchange currencyExchange = foreignExchange.currencyExchangeRate("EUR", "GBP");
         CurrencyExchangeData currencyExchangeData = currencyExchange.getData();
 
@@ -34,6 +35,9 @@ public class App {
                             "\n" + "-------------------------------------------------------";
 
             System.out.println(result);
+        } catch (AlphaVantageException e) {
+            System.out.println("The maximum amount of Server polling has been achieved (5/minute or 500/day)");
+        }
     }
 }
 
