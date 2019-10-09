@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 
 public class App {
-    public static void createLogFile(String van, String naar) throws FileNotFoundException {
+    public static void createLogFile(String currencyFrom, String currencyTo) throws FileNotFoundException {
 //     This is for on a Mac (~/Desktop = /Users/luisarendsanchez/Desktop)
 
        /*PrintStream o = new PrintStream(new FileOutputStream("/Users/luisarendsanchez/Desktop/Spoon DS/logTest/a.txt", true));
@@ -30,7 +30,7 @@ public class App {
         ForeignExchange foreignExchange = new ForeignExchange(apiConnector);
 
         try {
-        CurrencyExchange currencyExchange = foreignExchange.currencyExchangeRate(van, naar);
+        CurrencyExchange currencyExchange = foreignExchange.currencyExchangeRate(currencyFrom, currencyTo);
         CurrencyExchangeData currencyExchangeData = currencyExchange.getData();
 
             String result =
