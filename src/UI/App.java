@@ -14,8 +14,15 @@ import java.time.LocalDateTime;
 
 public class App {
     public static void createLogFile() throws FileNotFoundException {
-       PrintStream o = new PrintStream(new FileOutputStream("/Users/luisarendsanchez/Desktop/Spoon DS/logTest/a.txt", true));
+//     This is for on a Mac (~/Desktop = /Users/luisarendsanchez/Desktop)
+
+       /*PrintStream o = new PrintStream(new FileOutputStream("/Users/luisarendsanchez/Desktop/Spoon DS/logTest/a.txt", true));
        System.setOut(o);
+       */
+
+//     This is for the Unix based OS
+       PrintStream Pi = new PrintStream(new FileOutputStream("~/Desktop/logTest/a.txt", true));
+       System.setOut(Pi);
 
         String apiKey = "89HPIWEIMKSVS0TW";
         int timeout = 3000;
