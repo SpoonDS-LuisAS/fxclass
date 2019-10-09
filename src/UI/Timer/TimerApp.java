@@ -9,7 +9,7 @@ public class TimerApp {
     //periodMS is the wait between between the running of each instance.
 
     private static final int delayMs = 1000;
-    private static final int periodMs = 172800;
+    private static final int periodMs = 2000;
 
     public static void main(String[] args) {
         System.out.println(Thread.currentThread().getName());

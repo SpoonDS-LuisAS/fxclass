@@ -11,7 +11,7 @@ public class TimerJob extends TimerTask {
 
         MyTask task = new MyTask();
         try {
-            task.perform();
+            task.perform("EUR","GBP");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
