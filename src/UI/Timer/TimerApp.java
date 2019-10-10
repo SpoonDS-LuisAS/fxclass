@@ -16,5 +16,6 @@ public class TimerApp {
         TimerTask task = new TimerJob();
         Timer timer = new Timer();
         timer.schedule(task, delayMs, periodMs);
+        System.out.println("Running");
     }
 }
