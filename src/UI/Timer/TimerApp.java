@@ -13,9 +13,10 @@ public class TimerApp {
 
     public static void main(String[] args) {
         System.out.println(Thread.currentThread().getName());
+        System.out.println("Waiting for inputs");
         TimerTask task = new TimerJob();
         Timer timer = new Timer();
         timer.schedule(task, delayMs, periodMs);
-        System.out.println("Running");
+        System.out.println("Program is running");
     }
 }
