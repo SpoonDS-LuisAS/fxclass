@@ -21,10 +21,11 @@ public class App {
        */
 
 //     This is for the Unix based OS
-       PrintStream Pi = new PrintStream(new FileOutputStream("/Users/luisarendsanchez/Desktop/logTest/c.txt", true));
+       PrintStream Pi = new PrintStream(new FileOutputStream("/Users/luisarendsanchez/Desktop/logTest/f.txt", true));
        System.setOut(Pi);
 
-        String apiKey = "89HPIWEIMKSVS0TW";
+       // String apiKey = "89HPIWEIMKSVS0TW";
+        String apiKey = "NN1UVZE1B2K3V0YH";
         int timeout = 3000;
         AlphaVantageConnector apiConnector = new AlphaVantageConnector(apiKey, timeout);
         ForeignExchange foreignExchange = new ForeignExchange(apiConnector);

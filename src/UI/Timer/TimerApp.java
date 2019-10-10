@@ -14,7 +14,6 @@ public class TimerApp {
     public static void main(String[] args) {
         System.out.println(Thread.currentThread().getName());
         TimerTask task = new TimerJob();
-
         Timer timer = new Timer();
         timer.schedule(task, delayMs, periodMs);
     }
