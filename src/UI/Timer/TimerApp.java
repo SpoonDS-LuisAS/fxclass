@@ -1,7 +1,6 @@
 package UI.Timer;
 
-import java.util.Timer;
-import java.util.TimerTask;
+import java.io.FileNotFoundException;
 
 public class TimerApp {
 
@@ -9,14 +8,31 @@ public class TimerApp {
     //periodMS is the wait between between the running of each instance.
 
     private static final int delayMs = 1000;
-    private static final int periodMs = 2000;
+    private static final int periodMs = 5000;
 
     public static void main(String[] args) {
-        System.out.println(Thread.currentThread().getName());
-        System.out.println("Waiting for inputs");
-        TimerTask task = new TimerJob();
-        Timer timer = new Timer();
-        timer.schedule(task, delayMs, periodMs);
-        System.out.println("Program is running");
+//        args[0]="EUR";
+//        args[1]="USD";
+//        args[2]="test.log";
+Runnable runnable = new Runnable() {
+    @Override
+    public void run() {
+        while(true) {
+            UI.Timer.MyTask task = new UI.Timer.MyTask(args);
+            try {
+                task.perform();
+                Thread.sleep(5000);
+            } catch (FileNotFoundException | InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+};
+
+Thread thread = new Thread(runnable);
+thread.start();
+
+//        Timer timer = new Timer();
+//        timer.schedule(new TimerJob(args), delayMs, periodMs);
     }
 }
