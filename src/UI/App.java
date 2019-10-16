@@ -12,17 +12,19 @@ import java.io.PrintStream;
 import java.time.LocalDateTime;
 
 
+
 public class App {
-    public static void createLogFile(String currencyFrom, String currencyTo) throws FileNotFoundException {
-//     This is for on a Mac (~/Desktop = /Users/luisarendsanchez/Desktop)
+    public static void createLogFile(String currencyFrom, String currencyTo) throws FileNotFoundException{
+        /* //This is for on a Mac (~/Desktop = /Users/luisarendsanchez/Desktop) (to be implemented) */
 
        /*PrintStream o = new PrintStream(new FileOutputStream("/Users/luisarendsanchez/Desktop/Spoon DS/logTest/a.txt", true));
        System.setOut(o);
        */
 
-//     This is for the Unix based OS
+     //This is for the Unix based OS (to be implemented)
        PrintStream Pi = new PrintStream(new FileOutputStream("/Users/luisarendsanchez/Desktop/logTest/f.txt", true));
        System.setOut(Pi);
+
 
        // String apiKey = "89HPIWEIMKSVS0TW";
         String apiKey = "NN1UVZE1B2K3V0YH";
@@ -46,40 +48,7 @@ public class App {
 
             System.out.println(result);
         } catch (AlphaVantageException e) {
-            System.out.println("The maximum amount of Server polling has been achieved (5/minute or 500/day)"+"\n");
+            System.out.println("ERROR: The maximum amount of Server polling has been achieved (5/minute or 500/day)"+"\n");
         }
     }
 }
-
-
-
-//        try {
-//            CurrencyExchange currencyExchange = foreignExchange.currencyExchangeRate("EUR", "USD");
-//            CurrencyExchangeData currencyExchangeData = currencyExchange.getData();
-//
-//            System.out.println("--------------------------------------------------------------------");
-//            System.out.println("from currency code: " + currencyExchangeData.getFromCurrencyCode());
-//            System.out.println("from currency name: " + currencyExchangeData.getFromCurrencyName());
-//            System.out.println("to currency code:   " + currencyExchangeData.getToCurrencyCode());
-//            System.out.println("to currency name:   " + currencyExchangeData.getToCurrencyName());
-//            System.out.println("exchange rate:      " + currencyExchangeData.getExchangeRate());
-//            System.out.println("last refresh:       " + currencyExchangeData.getTime());
-//        } catch (AlphaVantageException e) {
-//            System.out.println("something went wrong");
-//        }
-//        try {
-//            CurrencyExchange currencyExchange = foreignExchange.currencyExchangeRate("GBP", "USD");
-//            CurrencyExchangeData currencyExchangeData = currencyExchange.getData();
-//
-//            System.out.println("--------------------------------------------------------------------");
-//            System.out.println("from currency code: " + currencyExchangeData.getFromCurrencyCode());
-//            System.out.println("from currency name: " + currencyExchangeData.getFromCurrencyName());
-//            System.out.println("to currency code:   " + currencyExchangeData.getToCurrencyCode());
-//            System.out.println("to currency name:   " + currencyExchangeData.getToCurrencyName());
-//            System.out.println("exchange rate:      " + currencyExchangeData.getExchangeRate());
-//            System.out.println("last refresh:       " + currencyExchangeData.getTime());
-//        } catch (AlphaVantageException e) {
-//            System.out.println("something went wrong");
-//        }
-//    }
-//}
