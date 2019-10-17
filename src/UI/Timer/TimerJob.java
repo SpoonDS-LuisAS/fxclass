@@ -7,7 +7,7 @@ public class TimerJob extends TimerTask {
     String[] args = null;
 
     public TimerJob(String[] args) {
-     this.args=args;
+     this.args=args
     }
 
     //Terminal based input
