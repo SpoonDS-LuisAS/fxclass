@@ -1,6 +1,7 @@
 package UI.Timer;
 
 import java.util.Timer;
+import java.util.TimerTask;
 
 public class TimerApp {
 
@@ -8,41 +9,19 @@ public class TimerApp {
     //periodMS is the wait between between the running of each instance.
 
     private static final int delayMs = 1000;
-    private static final int periodMs = 5000;
+    
 
     public static void main(String[] args) {
+    //periodMS is the wait between between the running of each instance. (*1000 to change the value to seconds)
+        int periodMs = (Integer.parseInt(args[3])*1000);
+
+
+        TimerTask task = new TimerJob(args);
 
         Timer timer = new Timer();
-        timer.schedule(new TimerJob(args), 0, periodMs);
+        timer.schedule(task, delayMs, periodMs);
 
+        System.out.println("Program is running");
 
-
-
-
-//        args[0]="EUR";
-//        args[1]="USD";
-//        args[2]="test.log";
-
-//
-//Runnable runnable = new Runnable() {
-//    @Override
-//    public void run() {
-//        while(true) {
-//            UI.Timer.MyTask task = new UI.Timer.MyTask(args);
-//            try {
-//                task.perform();
-//                Thread.sleep(5000);
-//            } catch (FileNotFoundException | InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
-//};
-//
-//Thread thread = new Thread(runnable);
-//thread.start();
-
-//        Timer timer = new Timer();
-//        timer.schedule(new TimerJob(args), delayMs, periodMs);
     }
 }

@@ -14,9 +14,9 @@ import java.time.LocalDateTime;
 
 
 public class App {
-    public static void createLogFile(String currencyFrom, String currencyTo) throws FileNotFoundException{
+    public static void createLogFile(String currencyFrom, String currencyTo, String path_To_log) throws FileNotFoundException{
 
-       PrintStream Pi = new PrintStream(new FileOutputStream("varOutput", true));
+       PrintStream Pi = new PrintStream(new FileOutputStream(path_To_log, true));
        System.setOut(Pi);
 
 

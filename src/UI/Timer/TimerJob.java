@@ -1,24 +1,35 @@
 package UI.Timer;
 
-import java.io.FileNotFoundException;
 import java.util.TimerTask;
 
 public class TimerJob extends TimerTask {
     String[] args = null;
 
     public TimerJob(String[] args) {
-     this.args=args
+     this.args=args;
     }
 
-    //Terminal based input
+    public void run() {
+        MyTask task = new MyTask();
+        task.perform(args);
+    }
+}
+
+
+
+
+
+
+// Old inputs:
+
+//Terminal based input
 
 //    Scanner myObj = new Scanner(System.in);  // Create a Scanner object
 
 //    String currencyFrom = args[0];
 //    String currencyTo = myObj.nextLine(); // Read user input
-
-    public void run() {
-
+//
+//
 //
 //        filechooser test = new filechooser();
 //        test.initiateTask();
@@ -26,8 +37,8 @@ public class TimerJob extends TimerTask {
 //
 //        System.out.println(filechooser.folder_path);
 
-        //Parameters for scanners, read a file from a PWD.
-        //Takes the values from the text files (Seperated by a new line)
+//Parameters for scanners, read a file from a PWD.
+//Takes the values from the text files (Seperated by a new line)
 
 //        File file = new File("/Users/luisarendsanchez/Desktop/logTest/FOREX.txt");
 //        Scanner sc = null;
@@ -57,20 +68,3 @@ public class TimerJob extends TimerTask {
 //        }
 //        String currencyFrom = currencies.substring(0,3);
 //        String currencyTo = currencies.substring(3);
-
-
-        MyTask task = new MyTask();
-        try {
-            task.perform();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-//        }
-        }
-    }
-}
-//
-//    public static void main (String[] args){
-//        TimerJob t = new TimerJob();
-//        t.run();
-//    }
-
